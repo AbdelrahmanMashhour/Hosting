@@ -1,0 +1,50 @@
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.AssemblyReference.cache
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.GeneratedMSBuildEditorConfig.editorconfig
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfoInputs.cache
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfo.cs
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.CoreCompileInputs.cache
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.deps.json
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+G:\Mestar Project\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.deps.json
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.AssemblyReference.cache
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfoInputs.cache
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfo.cs
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.CoreCompileInputs.cache
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.sourcelink.json
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\NotMineProject\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.deps.json
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.AssemblyReference.cache
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfoInputs.cache
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfo.cs
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.CoreCompileInputs.cache
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\Education Front+Back\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll
+D:\Education\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.deps.json
+D:\Education\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\Education\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.AssemblyReference.cache
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfoInputs.cache
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfo.cs
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.CoreCompileInputs.cache
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.sourcelink.json
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll

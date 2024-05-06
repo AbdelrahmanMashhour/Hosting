@@ -1,0 +1,17 @@
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\ReposatoryPatternWithUOW.EF.deps.json
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\ReposatoryPatternWithUOW.EF.runtimeconfig.json
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\ReposatoryPatternWithUOW.EF.dll
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\ReposatoryPatternWithUOW.EF.pdb
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\ReposatoryPatternWithUOW.Core.dll
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\ReposatoryPatternWithUOW.Core.pdb
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.csproj.AssemblyReference.cache
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.GeneratedMSBuildEditorConfig.editorconfig
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.AssemblyInfoInputs.cache
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.AssemblyInfo.cs
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.csproj.CoreCompileInputs.cache
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.csproj.CopyComplete
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.dll
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\refint\ReposatoryPatternWithUOW.EF.dll
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.pdb
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ReposatoryPatternWithUOW.EF.genruntimeconfig.cache
+G:\Mestar Project\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ref\ReposatoryPatternWithUOW.EF.dll
