@@ -139,10 +139,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.Configure<FormOptions>(x => { x.MultipartBodyLengthLimit = 2147483648; });
 builder.Services.AddHttpContextAccessor();
-//options =>
-//{
-//    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "api.xml"));
-//});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
