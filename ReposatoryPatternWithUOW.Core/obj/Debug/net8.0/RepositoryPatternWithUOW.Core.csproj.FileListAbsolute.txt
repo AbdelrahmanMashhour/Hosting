@@ -48,3 +48,16 @@ D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWit
 D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
 D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
 D:\Education\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.deps.json
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.AssemblyReference.cache
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfoInputs.cache
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfo.cs
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.CoreCompileInputs.cache
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.sourcelink.json
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\NotMineProject\Hosting\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll

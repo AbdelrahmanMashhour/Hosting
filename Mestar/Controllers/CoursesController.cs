@@ -241,16 +241,16 @@ namespace Mestar.Controllers
                 return BadRequest("You Don't Have Course With This Id");
             }
 
-            if (unitDto.Vocablary is not null &&!unitDto.Vocablary.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
-                return BadRequest("Only video files are allowed");
-            if (unitDto.Exam is not null &&!unitDto.Exam.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
-                return BadRequest("Only video files are allowed");
-            if (unitDto.Skill is not null &&!unitDto.Skill.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
-                return BadRequest("Only video files are allowed");
-            if (unitDto.Translation is not null &&!unitDto.Translation.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
-                return BadRequest("Only video files are allowed");
-            if (unitDto.Story is not null &&!unitDto.Story.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
-                return BadRequest("Only video files are allowed");
+            //if (unitDto.Vocablary is not null &&!unitDto.Vocablary.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                //return BadRequest("Only video files are allowed");
+            //if (unitDto.Exam is not null &&!unitDto.Exam.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                //return BadRequest("Only video files are allowed");
+            //if (unitDto.Skill is not null &&!unitDto.Skill.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                //return BadRequest("Only video files are allowed");
+            //if (unitDto.Translation is not null &&!unitDto.Translation.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                //return BadRequest("Only video files are allowed");
+            //if (unitDto.Story is not null &&!unitDto.Story.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                //return BadRequest("Only video files are allowed");
             
 
 

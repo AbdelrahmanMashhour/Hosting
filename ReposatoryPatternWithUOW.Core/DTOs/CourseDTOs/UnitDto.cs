@@ -10,14 +10,14 @@ namespace RepositoryPatternWithUOW.Core.DTOs.CourseDTOs
     public class UnitDto
     {
         public int CourseId { get; set; }
-        public IFormFile? Vocablary { get; set; }
+        public string? Vocablary { get; set; }
         public IFormFile? VocablaryPdf { get; set; }
-        public IFormFile? Skill { get; set; }
+        public string? Skill { get; set; }
         public IFormFile? SkillPdf { get; set; }
-        public IFormFile? Translation { get; set; }
+        public string? Translation { get; set; }
         public IFormFile? TranslationPdf { get; set; }
-        public IFormFile? Exam { get; set; }
-        public IFormFile? Story { get; set; }
+        public string? Exam { get; set; }
+        public string? Story { get; set; }
         public IFormFile? StoryPdf { get; set; }
     }
 }

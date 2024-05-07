@@ -110,48 +110,52 @@ namespace RepositoryPatternWithUOW.EF.Repositories
             
             string s1, s2, s3, s4, s5, s6, s7, s8, s9;
 
-            s1="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Exam?.FileName);
-            s2="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Skill?.FileName);
-            s3="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Translation?.FileName);
-            s4="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Story?.FileName);
-            s5="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Vocablary?.FileName);
+            //s1="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Exam?.FileName);
+            //s2="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Skill?.FileName);
+            //s3="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Translation?.FileName);
+            //s4="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Story?.FileName);
+            //s5="video"+Guid.NewGuid().ToString() + Path.GetExtension(unitDto.Vocablary?.FileName);
             s6= Guid.NewGuid().ToString() + Path.GetExtension(unitDto.VocablaryPdf?.FileName);
             s7= Guid.NewGuid().ToString() + Path.GetExtension(unitDto.StoryPdf?.FileName);
             s8= Guid.NewGuid().ToString() + Path.GetExtension(unitDto.SkillPdf?.FileName);
             s9= Guid.NewGuid().ToString() + Path.GetExtension(unitDto.TranslationPdf?.FileName);
 
-            unite.ExamUrl =unitDto.Exam is not null? "/"+s1:null;
-            unite.SkillUrl = unitDto.Skill is not null ? "/" + s2:null;
-            unite.TranslationUrl = unitDto.Translation is not null ? "/" +s3:null;
-            unite.StoryUrl = unitDto.Story is not null ? "/" + s4:null;
-            unite.VocablaryUrl = unitDto.Vocablary is not null ? "/" +s5:null;
+            unite.ExamUrl = unitDto.Exam;
+            unite.SkillUrl = unitDto.Skill ;
+            unite.TranslationUrl = unitDto.Translation ;
+            unite.StoryUrl = unitDto.Story ;
+            unite.VocablaryUrl = unitDto.Vocablary;
+
+
+
             unite.VocablaryPdfUrl = unitDto.VocablaryPdf is not null ? "/" + s6:null;
             unite.StoryPdfUrl = unitDto.StoryPdf is not null ? "/" + s7:null;
             unite.SkillPdfUrl = unitDto.SkillPdf is not null ? "/" +s8:null;
             unite.TranslationPdfUrl = unitDto.TranslationPdf is not null ? "/" +s9:null;
 
 
-            t1 =AddFile(unitDto.Exam, s1);
+            //t1 =AddFile(unitDto.Exam, s1);
 
-            t2 = AddFile(unitDto.Skill, s2);
+            //t2 = AddFile(unitDto.Skill, s2);
 
-            t3=AddFile(unitDto.Translation,s3);    
-            t4=AddFile(unitDto.Story,s4);
-            t5=AddFile(unitDto.Vocablary,s5);
+            //t3=AddFile(unitDto.Translation,s3);    
+            //t4=AddFile(unitDto.Story,s4);
+            //t5=AddFile(unitDto.Vocablary,s5);
 
             t6=AddFile(unitDto.VocablaryPdf,s6);
             t7=AddFile(unitDto.StoryPdf, s7);
             t8=AddFile(unitDto.SkillPdf, s8);
             t9=AddFile(unitDto.TranslationPdf,s9);
 
+           
 
             unite.CourseId = unitDto.CourseId;
             
-
+            
             await context.Unites.AddAsync(unite);
 
             t10 = context.SaveChangesAsync();
-           await Task.WhenAll(t1, t2, t3, t4, t5, t6, t7, t8, t9,t10);
+           await Task.WhenAll(/*t1, t2, t3, t4, t5, */t6, t7, t8, t9,t10);
 
             return unite.UnitId;
 
@@ -668,90 +672,101 @@ namespace RepositoryPatternWithUOW.EF.Repositories
                 return "true";
             };
 
-            Task<string> t1, t2, t3, t4, t5, t6, t7, t8, t9;
-            t1= updateHandler(dto.Exam, unite.ExamUrl);
-            t2= updateHandler(dto.Vocablary, unite.VocablaryUrl);
+            Task<string> //t1,
+                         //t2,
+                         t3,
+                         //t4,
+                         t5,
+                         //t6,
+                         t7,
+                         //t8,
+                         t9;
+            //t1= updateHandler(dto.Exam, unite.ExamUrl);
+            //t2= updateHandler(dto.Vocablary, unite.VocablaryUrl);
+            //t4 =updateHandler(dto.Story, unite.StoryUrl);
+            //t6 = updateHandler(dto.Skill, unite.SkillUrl);
+            //t8 = updateHandler(dto.Translation, unite.TranslationUrl);
+
             t3= updateHandler(dto.VocablaryPdf, unite.VocablaryPdfUrl);
-            t4 =updateHandler(dto.Story, unite.StoryUrl);
             t5 = updateHandler(dto.StoryPdf, unite.StoryPdfUrl);
-            t6 = updateHandler(dto.Skill, unite.SkillUrl);
             t7 = updateHandler(dto.SkillPdf, unite.SkillPdfUrl);
-            t8 = updateHandler(dto.Translation, unite.TranslationUrl);
             t9 = updateHandler(dto.TranslationPdf, unite.TranslationPdfUrl);
 
-            var resultTask = await Task.WhenAll(t1, t2, t3, t4, t5, t6, t7, t8, t9);
+            var resultTask = await Task.WhenAll(/*t1, t2,*/ t3, /*t4,*/ t5, /*t6,*/ t7, /*t8,*/ t9);
 
-            
+
+            //if (resultTask[0] == "null")
+            //    unite.ExamUrl = null;
+            //else if (resultTask[0] == null)
+            //    return false;
+            //else if (resultTask[0] != "true")
+            //    unite.ExamUrl = resultTask[0];
+            unite.ExamUrl = dto.Exam;
+
+
+            //if (resultTask[1] == "null")
+            //    unite.VocablaryUrl = null;
+            //else if (resultTask[1] == null)
+            //    return false;
+            //else if (resultTask[1] != "true")
+            //    unite.VocablaryUrl = resultTask[1];
+            unite.VocablaryUrl = dto.Vocablary;
+
             if (resultTask[0] == "null")
-                unite.ExamUrl = null;
+                unite.VocablaryPdfUrl = null;
             else if (resultTask[0] == null)
                 return false;
             else if (resultTask[0] != "true")
-                unite.ExamUrl = resultTask[0];
+                unite.VocablaryPdfUrl = resultTask[0];
+
+
+            //if (resultTask[3] == "null")
+            //    unite.StoryUrl = null;
+            //else if (resultTask[3] == null)
+            //    return false;
+            //else if (resultTask[3] != "true")
+            //    unite.StoryUrl = resultTask[3];
+            unite.StoryUrl = dto.Story;
 
 
 
             if (resultTask[1] == "null")
-                unite.VocablaryUrl = null;
+                unite.StoryPdfUrl = null;
             else if (resultTask[1] == null)
                 return false;
             else if (resultTask[1] != "true")
-                unite.VocablaryUrl = resultTask[1];
+                unite.StoryPdfUrl = resultTask[1];
 
+
+            //if (resultTask[5] == "null")
+            //    unite.SkillUrl = null;
+            //else if (resultTask[5] == null)
+            //    return false;
+            //else if (resultTask[5] != "true")
+            //    unite.SkillUrl = resultTask[5];
+            unite.SkillUrl=dto.Skill;
 
             if (resultTask[2] == "null")
-                unite.VocablaryPdfUrl = null;
+                unite.SkillPdfUrl = null;
             else if (resultTask[2] == null)
                 return false;
             else if (resultTask[2] != "true")
-                unite.VocablaryPdfUrl = resultTask[2];
+                unite.SkillPdfUrl = resultTask[2];
 
+            //if (resultTask[7] == "null")
+            //    unite.TranslationUrl = null;
+            //else if (resultTask[7] == null)
+            //    return false;
+            //else if (resultTask[7] != "true")
+            //    unite.TranslationUrl = resultTask[7];
+            unite.TranslationUrl=dto.Translation;
 
             if (resultTask[3] == "null")
-                unite.StoryUrl = null;
+                unite.TranslationPdfUrl = null;
             else if (resultTask[3] == null)
                 return false;
             else if (resultTask[3] != "true")
-                unite.StoryUrl = resultTask[3];
-
-
-            if (resultTask[4] == "null")
-                unite.StoryPdfUrl = null;
-            else if (resultTask[4] == null)
-                return false;
-            else if (resultTask[4] != "true")
-                unite.StoryPdfUrl = resultTask[4];
-
-
-            if (resultTask[5] == "null")
-                unite.SkillUrl = null;
-            else if (resultTask[5] == null)
-                return false;
-            else if (resultTask[5] != "true")
-                unite.SkillUrl = resultTask[5];
-
-
-            if (resultTask[6] == "null")
-                unite.SkillPdfUrl = null;
-            else if (resultTask[6] == null)
-                return false;
-            else if (resultTask[6] != "true")
-                unite.SkillPdfUrl = resultTask[6];
-
-            if (resultTask[7] == "null")
-                unite.TranslationUrl = null;
-            else if (resultTask[7] == null)
-                return false;
-            else if (resultTask[7] != "true")
-                unite.TranslationUrl = resultTask[7];
-
-
-            if (resultTask[8] == "null")
-                unite.TranslationPdfUrl = null;
-            else if (resultTask[8] == null)
-                return false;
-            else if (resultTask[8] != "true")
-                unite.TranslationPdfUrl = resultTask[8];
+                unite.TranslationPdfUrl = resultTask[3];
 
 
 
