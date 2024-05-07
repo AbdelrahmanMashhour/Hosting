@@ -786,10 +786,12 @@ namespace RepositoryPatternWithUOW.EF.Repositories
             context.ChangeTracker.LazyLoadingEnabled = false;
 
             var studenCourses = await context.StudentCourse.Include(x=>x.Course).Include(x=>x.Student).Where(x => x.CourseId == courseId).AsNoTracking().ToListAsync();
-            var studentPayment = new StudenPayment();
+
             var studentPayments = new List<StudenPayment>();
             foreach (var studentCourse in studenCourses)
             {
+
+                var studentPayment = new StudenPayment();
                 studentPayment.FirstName= studentCourse.Student.FirstName;
                 studentPayment.LastName= studentCourse.Student.LastName;
                 studentPayment.Email= studentCourse.Student.Email;
