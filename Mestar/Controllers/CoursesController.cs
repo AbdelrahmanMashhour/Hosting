@@ -72,7 +72,7 @@ namespace Mestar.Controllers
             if (unit == null)
                 return BadRequest("Your Id is InCorrect...");
 
-            unit.SkillUrl = unit.SkillUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.SkillUrl;
+            unit.SkillUrl = unit.SkillUrl is null ? null :  unit.SkillUrl;
 
 
             unit.SkillPdfUrl = unit.SkillPdfUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.SkillPdfUrl;
@@ -81,14 +81,14 @@ namespace Mestar.Controllers
             unit.TranslationPdfUrl = unit.TranslationPdfUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.TranslationPdfUrl;
 
 
-            unit.TranslationUrl = unit.TranslationUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.TranslationUrl;
+            unit.TranslationUrl = unit.TranslationUrl is null ? null :  unit.TranslationUrl;
 
 
-            unit.ExamUrl = unit.ExamUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.ExamUrl;
+            unit.ExamUrl = unit.ExamUrl is null ? null :unit.ExamUrl;
 
             unit.VocablaryPdfUrl = unit.VocablaryPdfUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.VocablaryPdfUrl;
 
-            unit.VocablaryUrl = unit.VocablaryUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.VocablaryUrl;
+            unit.VocablaryUrl = unit.VocablaryUrl is null ? null :  unit.VocablaryUrl;
 
 
             unit.StoryPdfUrl = unit.StoryPdfUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.StoryPdfUrl;
