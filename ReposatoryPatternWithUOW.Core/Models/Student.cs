@@ -17,7 +17,6 @@ namespace RepositoryPatternWithUOW.Core.Models
         public virtual List<StudentCourse> StudentCourses { get; set; }
         public virtual List<Course> Courses { get; set; } = new();
         public virtual List<Solution> Solution { get; set; }=new();
-        public virtual UserConnection UserConnection { get; set; }  
         [JsonIgnore]
         public virtual List<StudentPhones> StudentPhones { get; set; }=new();
         public virtual List<Assignment> Assignments { get; set; } = new();

@@ -24,6 +24,6 @@ namespace RepositoryPatternWithUOW.Core.Models
         public string? StoryPdfUrl { get; set; }
         [JsonIgnore]
         public virtual Course Course { get; set; }
-        public virtual List<Assignment> Assignment { get; set; } = new();
+        public virtual Assignment Assignment { get; set; }
     }
 }

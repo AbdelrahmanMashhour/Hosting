@@ -17,7 +17,6 @@ namespace RepositoryPatternWithUOW.EF
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public IBaseRepository<UserConnection> UserConnection { get;  }
         public IUserRepository UserRepository { get; }
         public IBaseRepository<IdentityTokenVerification> IdentityTokenVerification { get; }
         public IBaseRepository<Course> CourseRepository{get; }
@@ -41,7 +40,6 @@ namespace RepositoryPatternWithUOW.EF
             AssignmentRepository=new Repository<Assignment>(context, mapper, this.httpContextAccessor);
             SolutionRepository= new Repository<Solution>(context, mapper, this.httpContextAccessor);
             StudentCourseRepository = new Repository<StudentCourse>(context, mapper, httpContextAccessor);
-            UserConnection=new Repository<UserConnection>(context,mapper, this.httpContextAccessor);    
         }
 
         public async Task<int> SaveChangesAsync()

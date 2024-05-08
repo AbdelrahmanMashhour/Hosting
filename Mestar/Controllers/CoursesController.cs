@@ -98,13 +98,9 @@ namespace Mestar.Controllers
             unit.StoryUrl = unit.StoryUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.StoryUrl;
 
 
+            unit.Assignment.AssFiles= HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.Assignment.AssFiles;
 
-
-                foreach (var nested in unit.Assignment)
-                {
-                    nested.AssFiles = HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + nested.AssFiles;
-                }
-
+            
 
 
 

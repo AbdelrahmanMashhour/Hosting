@@ -18,9 +18,9 @@ namespace RepositoryPatternWithUOW.EF
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Unite> Unites { get; set; }
-        public DbSet<Assignment> Assignment { get; set; }
-        public DbSet<Solution> Solution { get; set; }
-        public DbSet<StudentCourse> StudentCourse { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<Solution> Solutions { get; set; }
+        public DbSet<StudentCourse> StudentCourses { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace RepositoryPatternWithUOW.EF
 
 
 
-                x.HasOne(x=>x.Unite).WithMany(x=>x.Assignment).HasForeignKey(x=>x.UniteId).OnDelete(DeleteBehavior.Cascade);
+                x.HasOne(x=>x.Unite).WithOne(x=>x.Assignment).HasForeignKey<Assignment>(x=>x.UniteId).OnDelete(DeleteBehavior.Cascade);
 
             });
             modelBuilder.Entity<Course>(x =>
@@ -47,7 +47,7 @@ namespace RepositoryPatternWithUOW.EF
 
 
 
-                x.HasMany(x=>x.Unites).WithOne(x=>x.Course).HasForeignKey(x=>x.CourseId).OnDelete(DeleteBehavior.Cascade);
+                x.HasOne(x=>x.Unite).WithOne(x=>x.Course).HasForeignKey<Unite>(x=>x.CourseId).OnDelete(DeleteBehavior.Cascade);
 
                 
                     
@@ -91,14 +91,8 @@ namespace RepositoryPatternWithUOW.EF
                 x.HasMany(x => x.Assignments)
                 .WithMany(x => x.Students)
                 .UsingEntity<Solution>(l=>l.HasOne(o=>o.Assignment).WithMany(w=>w.Solutions).HasForeignKey(f=>f.AssignmentId),r=>r.HasOne(s=>s.Student).WithMany(m=>m.Solution).HasForeignKey(s=>s.StudentId));
-                x.HasOne(x => x.UserConnection).WithOne(x => x.Student).HasForeignKey<UserConnection>(x => x.StudentId);
 
 
-            });
-            modelBuilder.Entity<UserConnection>(x =>
-            {
-                x.HasKey(x => new { x.StudentId, x.ConnectionId });
-                x.Property(x => x.ConnectionId).HasMaxLength(255);
             });
             //modelBuilder.Entity<Solution>(x =>
             //{

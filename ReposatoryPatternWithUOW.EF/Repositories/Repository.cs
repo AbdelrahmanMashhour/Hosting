@@ -291,6 +291,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
             if (dto.Grade > assignment.FullMark||dto.Grade<0)
                 return false;
             solution.StudentDegree = dto.Grade;
+
             context.Update(solution); 
             return true;
         }
@@ -299,7 +300,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         {
             var studentExams = new List<StudentExams>();
             var studentExam = new StudentExams();
-            var assignments = await context.Solution
+            var assignments = await context.Solutions
             .Where(s => s.StudentId == id)
             .Select(s => s.Assignment) // Select only the Assignment objects
             .ToListAsync();
@@ -330,7 +331,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
 
             foreach (var item in unites)
             {
-                item.SkillUrl= item.SkillUrl is null ?null:_httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.SkillUrl;
+                item.SkillUrl= item.SkillUrl is null ?null:item.SkillUrl;
 
 
                 item.SkillPdfUrl =item.SkillPdfUrl is null?null: _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.SkillPdfUrl;
@@ -339,29 +340,26 @@ namespace RepositoryPatternWithUOW.EF.Repositories
                 item.TranslationPdfUrl = item.TranslationPdfUrl is null?null: _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.TranslationPdfUrl;
 
 
-                item.TranslationUrl = item.TranslationUrl is null?null: _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.TranslationUrl;
+                item.TranslationUrl = item.TranslationUrl is null?null: item.TranslationUrl;
 
 
-                item.ExamUrl =item.ExamUrl is null?null :_httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.ExamUrl;
+                item.ExamUrl =item.ExamUrl is null?null:item.ExamUrl;
 
                 item.VocablaryPdfUrl = item.VocablaryPdfUrl is null ? null : _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.VocablaryPdfUrl;
 
-                item.VocablaryUrl = item.VocablaryUrl is null ? null : _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.VocablaryUrl;
+                item.VocablaryUrl = item.VocablaryUrl is null ? null :item.VocablaryUrl;
 
 
                 item.StoryPdfUrl = item.StoryPdfUrl is null ? null : _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.StoryPdfUrl;
                 
                 
-                item.StoryUrl = item.StoryUrl is null ? null : _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.StoryUrl;
+                item.StoryUrl = item.StoryUrl is null ? null : item.StoryUrl;
 
 
                
+                item.Assignment.AssFiles= _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.Assignment.AssFiles;
 
-
-                foreach (var nested in item.Assignment)
-                {
-                    nested.AssFiles = _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + nested.AssFiles;
-                }
+               
                 
             }
             return unites;
@@ -369,7 +367,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         }
         public async Task<IEnumerable<User>> AllStudentInCoursByCourseId(int CourseId)
         {
-            var studentCours = await context.StudentCourse.Where(c => c.CourseId == CourseId).ToListAsync();
+            var studentCours = await context.StudentCourses.Where(c => c.CourseId == CourseId).ToListAsync();
             if (studentCours==null) return Enumerable.Empty<User>();
             var users = new List<User>();
             foreach (var item in studentCours)
@@ -425,7 +423,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
             {
                 return $"You Don't have this Course id {dto.CourseId} ";
             }
-            var result = context.StudentCourse.Where(x => x.CourseId == dto.CourseId && x.StudentId == student.UserId).ExecuteDelete();
+            var result = context.StudentCourses.Where(x => x.CourseId == dto.CourseId && x.StudentId == student.UserId).ExecuteDelete();
             
             return "Sucsess Process";
 
@@ -455,10 +453,10 @@ namespace RepositoryPatternWithUOW.EF.Repositories
 
             foreach (var unite in unites)
             {
-                var assignments = await context.Assignment.Where(a => a.UniteId == unite.UnitId).ToListAsync();
+                var assignments = await context.Assignments.Where(a => a.UniteId == unite.UnitId).ToListAsync();
                 foreach (var assignment in assignments)
                 {
-                    var solutions = await context.Solution.Where(sol => sol.AssignmentId == assignment.AssignmentId).ToListAsync();
+                    var solutions = await context.Solutions.Where(sol => sol.AssignmentId == assignment.AssignmentId).ToListAsync();
                     foreach (var solution in solutions)
                     {
                         string path = "wwwroot" + solution.SolutionFileUrl;
@@ -498,7 +496,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         public async Task<IEnumerable<StudentSolutionsDto>> GetSolutionsData()
         {
             var studentSolutionsDto = new List<StudentSolutionsDto>();
-            var solutions = await context.Solution.ToListAsync();
+            var solutions = await context.Solutions.ToListAsync();
 
             foreach (var solution in solutions)
             {
@@ -507,7 +505,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
                 studentSolution.AssignmentId = solution.AssignmentId;
                 studentSolution.StudentId = solution.StudentId;
 
-                var assignment = await context.Assignment.FirstOrDefaultAsync(a => a.AssignmentId == solution.AssignmentId);
+                var assignment = await context.Assignments.FirstOrDefaultAsync(a => a.AssignmentId == solution.AssignmentId);
 
                 studentSolution.FullMark = assignment.FullMark;
                 studentSolution.AssignmentName = assignment.Name;
@@ -568,7 +566,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         {
 
 
-            var TotalCourses = await context.StudentCourse
+            var TotalCourses = await context.StudentCourses
             .Where(sc => sc.StudentId == stuId)
             .Join(context.Courses,
                 sc => sc.CourseId,
@@ -778,14 +776,14 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         }
         public async Task<bool> IsPayOrNot(int studentId, int courseId)
         {
-            return await context.StudentCourse.AnyAsync(st=>st.StudentId==studentId && st.CourseId==courseId);
+            return await context.StudentCourses.AnyAsync(st=>st.StudentId==studentId && st.CourseId==courseId);
         }
 
         public async Task<IEnumerable<StudenPayment>> GetStudenPaymentByCourseId(int courseId)
         {
             context.ChangeTracker.LazyLoadingEnabled = false;
 
-            var studenCourses = await context.StudentCourse.Include(x=>x.Course).Include(x=>x.Student).Where(x => x.CourseId == courseId).AsNoTracking().ToListAsync();
+            var studenCourses = await context.StudentCourses.Include(x=>x.Course).Include(x=>x.Student).Where(x => x.CourseId == courseId).AsNoTracking().ToListAsync();
 
             var studentPayments = new List<StudenPayment>();
             foreach (var studentCourse in studenCourses)

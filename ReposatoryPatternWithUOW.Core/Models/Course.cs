@@ -27,8 +27,8 @@ namespace RepositoryPatternWithUOW.Core.Models
         public virtual ICollection<StudentCourse> StudentCourses { get; set; }
         public virtual ICollection<Student> Students { get; set; }
 
-        public virtual ICollection<Unite> Unites { get; set; }
-        //public virtual ICollection<Assignment> Assignments { get; set; }
+        public virtual Unite Unite { get; set; } = null!;
+
 
 
     }
