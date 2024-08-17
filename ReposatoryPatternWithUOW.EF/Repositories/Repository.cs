@@ -586,13 +586,14 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         {
 
 
-            var TotalCourses = await context.StudentCourses
-            .Where(sc => sc.StudentId == stuId)
-            .Join(context.Courses,
-                sc => sc.CourseId,
-                c => c.CourseId,
-                (sc, c) => c)
-            .ToListAsync();
+            //var TotalCourses = await context.StudentCourses
+            //.Where(sc => sc.StudentId == stuId)
+            //.Join(context.Courses,
+            //    sc => sc.CourseId,
+            //    c => c.CourseId,
+            //    (sc, c) => c)
+            //.ToListAsync();
+            var TotalCourses = await context.Courses.Where(c => c.CoursePrice == 0 || c.StudentCourses.Any(x => x.StudentId == stuId)).AsNoTracking().ToListAsync();
 
             var courses = new List<RetriveCourses>();
 

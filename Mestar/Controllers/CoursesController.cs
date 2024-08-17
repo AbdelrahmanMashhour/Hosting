@@ -191,40 +191,18 @@ namespace Mestar.Controllers
                 if (dto.Profile != null && dto.Profile.Length != 0)
                 {
                     fileName = Guid.NewGuid().ToString() + Path.GetExtension(dto.Profile.FileName);
-
                     filePath = Path.Combine(webHostEnvironment.WebRootPath, fileName);
-
-
-
-
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await dto.Profile.CopyToAsync(stream);
                     }
 
                     course.ProfileUrl = Url.Content("/"+fileName);
-
                 }
-
                 await unitOfWork.CourseRepository.AddAsync(course);
                 await unitOfWork.SaveChangesAsync();
                 var coursId = await unitOfWork.CourseRepository.LastCourseId();
-                if (dto.CoursePrice == 0)
-                {
-                    var studentIds = await unitOfWork.UserRepository.GetAllStudentsId();
-                    var studentCourse = new List<StudentCourse>();
-                    foreach (var id in studentIds)
-                    {
-                        studentCourse.Add(new StudentCourse
-                        {
-                            CourseId = coursId,
-                            StudentId = id,
-                            JoinedAt = DateOnly.FromDateTime(DateTime.Now)
-                        });
-                    }
-                    await unitOfWork.StudentCourseRepository.AddRangeAsync(studentCourse);
-                await unitOfWork.SaveChangesAsync();
-                }
+               
                 var obj = new { coursId = coursId, dto = dto };
                 return Ok(obj);
 
