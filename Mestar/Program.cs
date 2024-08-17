@@ -36,11 +36,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.Configure<FormOptions>(options =>
-{
-    //3221225472?3g
-    options.MultipartBodyLengthLimit = 2147483648; // 2 GB in bytes
-});
+//builder.Services.Configure<FormOptions>(options =>
+//{
+//    //3221225472?3g
+//    options.MultipartBodyLengthLimit = 2147483648; // 2 GB in bytes
+//});
 
 
 
@@ -143,11 +143,11 @@ builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI();
-//}
+}
 
 
 app.UseForwardedHeaders();

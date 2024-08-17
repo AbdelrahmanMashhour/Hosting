@@ -802,25 +802,43 @@ namespace RepositoryPatternWithUOW.EF.Repositories
 
         public async Task<IEnumerable<StudenPayment>> GetStudenPaymentByCourseId(int courseId)
         {
-            context.ChangeTracker.LazyLoadingEnabled = false;
-
-            var studenCourses = await context.StudentCourses.Include(x=>x.Course).Include(x=>x.Student).Where(x => x.CourseId == courseId).AsNoTracking().ToListAsync();
-
-            var studentPayments = new List<StudenPayment>();
-            foreach (var studentCourse in studenCourses)
+            var course = await context.Courses.FirstOrDefaultAsync(c => c.CourseId == courseId);
+            if (course is null)
+                return null;
+            ICollection<StudentCourse> studenCourses;
+            if (course.CoursePrice == 0)
             {
+                context.ChangeTracker.LazyLoadingEnabled = false;
+                var studentPayments = context.Students.AsNoTracking();
+                return studentPayments.Select(x => new StudenPayment
+                {
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    JoinedAt = null,
+                    Stage = course.CoursStage,
+                    CourseName = course.CourseName
 
-                var studentPayment = new StudenPayment();
-                studentPayment.FirstName= studentCourse.Student.FirstName;
-                studentPayment.LastName= studentCourse.Student.LastName;
-                studentPayment.Email= studentCourse.Student.Email;
-                studentPayment.JoinedAt = studentCourse.JoinedAt;
-                studentPayment.Stage = studentCourse.Course.CoursStage;
-                studentPayment.CourseName = studentCourse.Course.CourseName;
-
-                studentPayments.Add(studentPayment);
+                });
             }
-            return studentPayments;
+            else
+            {
+                studenCourses = course.StudentCourses;
+                //studenCourses = await context.StudentCourses.Include(x=>x.Course).Include(x=>x.Student).Where(x => x.CourseId == courseId).AsNoTracking().ToListAsync();
+                var studentPayments = new List<StudenPayment>();
+                foreach (var studentCourse in studenCourses)
+                {
+                    var studentPayment = new StudenPayment();
+                    studentPayment.FirstName = studentCourse.Student.FirstName;
+                    studentPayment.LastName = studentCourse.Student.LastName;
+                    studentPayment.Email = studentCourse.Student.Email;
+                    studentPayment.JoinedAt = studentCourse.JoinedAt;
+                    studentPayment.Stage = studentCourse.Course.CoursStage;
+                    studentPayment.CourseName = studentCourse.Course.CourseName;
+                    studentPayments.Add(studentPayment);
+                }
+                return studentPayments;
+            }
         }
 
         public async Task<bool> ExecuteDeleteAsync(Expression<Func<T, bool>> predicate)

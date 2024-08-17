@@ -12,7 +12,7 @@ namespace RepositoryPatternWithUOW.Core.ReturnedModels
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public DateOnly JoinedAt { get; set; }
+        public DateOnly? JoinedAt { get; set; }
         public string CourseName { get; set; }
         public Stages Stage { get; set; }
 
