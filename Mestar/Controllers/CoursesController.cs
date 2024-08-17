@@ -191,18 +191,17 @@ namespace Mestar.Controllers
                 if (dto.Profile != null && dto.Profile.Length != 0)
                 {
                     fileName = Guid.NewGuid().ToString() + Path.GetExtension(dto.Profile.FileName);
+
                     filePath = Path.Combine(webHostEnvironment.WebRootPath, fileName);
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await dto.Profile.CopyToAsync(stream);
                     }
-
                     course.ProfileUrl = Url.Content("/"+fileName);
                 }
                 await unitOfWork.CourseRepository.AddAsync(course);
                 await unitOfWork.SaveChangesAsync();
                 var coursId = await unitOfWork.CourseRepository.LastCourseId();
-               
                 var obj = new { coursId = coursId, dto = dto };
                 return Ok(obj);
 
