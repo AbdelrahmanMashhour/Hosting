@@ -319,7 +319,6 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
            // return true;
 
         }
-        [Authorize(Roles = "Admine")]
 
         public async Task<IEnumerable<StudentDto>> GetAllStudents(bool bloked)
         {
@@ -340,7 +339,12 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
             }
             return studentsDto;
         }
-        [Authorize(Roles = "Admine")]
+        public async Task<IEnumerable<int>> GetAllStudentsId()
+        {
+            List<int> studentIds=new List<int>();
+            studentIds = await context.Students.Where(x=>x.EmailConfirmed).AsNoTracking().Select(s=>s.UserId).ToListAsync();
+            return studentIds;
+        }
 
         public async Task<bool> AddToBlackList(int id)
         {
@@ -359,7 +363,6 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
 
             
         }
-        [Authorize(Roles ="Admine")]
         public async Task<bool> RemoveFromBlackList(int id)
         {
             var result = await context.Users.Where(x => x.UserId == id).ExecuteUpdateAsync(x => x.SetProperty(p => p.Blocked, false));
@@ -382,6 +385,11 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
             profileData.Picture = student.ProfilePictureUrl;
             return profileData;
 
+        }
+        public async Task<int> GetUserId(string email)
+        {
+            int id=context.Users.Where(u=>u.Email==email).Select(u=>u.UserId).First();
+            return id;
         }
 
 

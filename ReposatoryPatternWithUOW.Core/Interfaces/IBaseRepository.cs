@@ -17,6 +17,7 @@ namespace RepositoryPatternWithUOW.Core.Interfaces
     public interface IBaseRepository<T>where T : class
     {
         Task<T> AddAsync(T obj);
+        Task<List<T>> AddRangeAsync(List<T> obj);
 
         Task<T> FindAsync(Expression<Func<T, bool>> criteria, string[] includes = null);
         Task<IEnumerable<T>> FindAllAsync(Expression<Func<T, bool>> criteria, string[] includes = null);
@@ -46,6 +47,7 @@ namespace RepositoryPatternWithUOW.Core.Interfaces
         public Task<IEnumerable<StudentSolutionsDto>> GetSolutionsData();
 
         public Task<IEnumerable<RetriveCourses>> AllCoursesAsync();
+        public Task<List<int>> GetFreeCoursesId();
         //for spadefic student
         public Task<IEnumerable<RetriveCourses>> AllCoursesAsync(int stuId);
 
@@ -57,6 +59,9 @@ namespace RepositoryPatternWithUOW.Core.Interfaces
         public Task<bool> IsPayOrNot(int studentId, int courseId);
 
         public Task<IEnumerable<StudenPayment>> GetStudenPaymentByCourseId(int courseId);
+
+        public Task<bool> ExistsAsync(int userId, int courseId);
+
 
     }
 }

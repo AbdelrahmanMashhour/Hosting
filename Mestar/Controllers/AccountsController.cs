@@ -61,13 +61,29 @@ namespace Mestar.Controllers
                 SetCookie("email", result.Email, (DateTime)result.ExpirationOfRefreshToken);
 
                 SetCookie("id", result.Id.ToString(), (DateTime)result.ExpirationOfRefreshToken);
+                //add to free courses:
+                var freeCoursesId = await unitOfWork.CourseRepository.GetFreeCoursesId();
+                int userId = await unitOfWork.UserRepository.GetUserId(loginDto.Email);
+                bool changed = false;
+                foreach (var courseId in freeCoursesId)
+                {
+                    bool exists = await unitOfWork.StudentCourseRepository.ExistsAsync(userId, courseId);
 
-
-
-                //result.RefreshToken = null;
-                //result.ExpirationOfRefreshToken = null;
-                //result.ExpirationOfJwt = null;
-
+                    if (!exists)
+                    {
+                        // Add new entry to StudentCourse
+                        var studentCourse = new StudentCourse
+                        {
+                            StudentId= userId,
+                            CourseId = courseId,
+                            // Other properties can be set here if needed
+                        };
+                        changed = true;
+                        await unitOfWork.StudentCourseRepository.AddAsync(studentCourse);
+                    }
+                }
+                if (changed)
+                    await unitOfWork.SaveChangesAsync();
 
                 return Ok();
             }

@@ -74,3 +74,16 @@ D:\EndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryP
 D:\EndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
 D:\EndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
 D:\EndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.deps.json
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.AssemblyReference.cache
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfoInputs.cache
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.AssemblyInfo.cs
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.csproj.CoreCompileInputs.cache
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.sourcelink.json
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.Core.dll
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.Core\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.Core.dll

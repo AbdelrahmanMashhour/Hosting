@@ -38,6 +38,17 @@ namespace RepositoryPatternWithUOW.EF.Repositories
             this.mapper = mapper;
             this._httpContextAccessor = httpContextAccessor;
         }
+        public async Task<List<int>> GetFreeCoursesId()
+        {
+            var result = new List<int>();
+            result=await context.Courses.Where(c=>c.CoursePrice==0).Select(c=>c.CourseId).ToListAsync();
+            return result;
+
+        }
+        public async Task<bool> ExistsAsync(int userId,int courseId)
+        {
+            return await context.StudentCourses.AnyAsync(sc => sc.StudentId == userId && sc.CourseId == courseId);
+        }
 
         public async Task<T> AddAsync(T obj)
         {
@@ -47,6 +58,15 @@ namespace RepositoryPatternWithUOW.EF.Repositories
             return obj;
 
         }
+        public async Task<List<T>> AddRangeAsync(List<T> obj)
+        {
+
+            await context.AddRangeAsync(obj);
+            
+            return obj;
+
+        }
+
 
         public async Task<T> FindAsync(Expression<Func<T, bool>> criteria, string[] includes = null)
         {
@@ -404,7 +424,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
              JoinedAt = DateOnly.ParseExact(JoinedAtStr, "dd/MM/yyyy", CultureInfo.InvariantCulture)
 
 
-        };
+            };
             await context.AddAsync(studentCourse);
             return "Sucsess Process";
 

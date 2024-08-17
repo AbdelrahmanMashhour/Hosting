@@ -11,6 +11,7 @@ using RepositoryPatternWithUOW.Core.Enums;
 using RepositoryPatternWithUOW.Core.Interfaces;
 using RepositoryPatternWithUOW.Core.Models;
 using RepositoryPatternWithUOW.EfCore.Mapper;
+using System.Globalization;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Mestar.Controllers
@@ -186,9 +187,7 @@ namespace Mestar.Controllers
                     TotoalHoure = dto.TotoalHoure,
                     AdminId = 1
                 };
-
-                //$"{Request.Scheme}://{Request.Host}/{Image-Name}"
-
+               
                 if (dto.Profile != null && dto.Profile.Length != 0)
                 {
                     fileName = Guid.NewGuid().ToString() + Path.GetExtension(dto.Profile.FileName);
@@ -203,15 +202,29 @@ namespace Mestar.Controllers
                         await dto.Profile.CopyToAsync(stream);
                     }
 
-
                     course.ProfileUrl = Url.Content("/"+fileName);
-
 
                 }
 
                 await unitOfWork.CourseRepository.AddAsync(course);
                 await unitOfWork.SaveChangesAsync();
                 var coursId = await unitOfWork.CourseRepository.LastCourseId();
+                if (dto.CoursePrice == 0)
+                {
+                    var studentIds = await unitOfWork.UserRepository.GetAllStudentsId();
+                    var studentCourse = new List<StudentCourse>();
+                    foreach (var id in studentIds)
+                    {
+                        studentCourse.Add(new StudentCourse
+                        {
+                            CourseId = coursId,
+                            StudentId = id,
+                            JoinedAt = DateOnly.FromDateTime(DateTime.Now)
+                        });
+                    }
+                    await unitOfWork.StudentCourseRepository.AddRangeAsync(studentCourse);
+                await unitOfWork.SaveChangesAsync();
+                }
                 var obj = new { coursId = coursId, dto = dto };
                 return Ok(obj);
 

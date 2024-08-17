@@ -4400,11 +4400,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
+      "projectUniqueName": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
       "projectName": "RepositoryPatternWithUOW.EF",
-      "projectPath": "D:\\EndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
+      "projectPath": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
       "packagesPath": "C:\\Users\\AbdElrahman\\.nuget\\packages\\",
-      "outputPath": "D:\\EndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\obj\\",
+      "outputPath": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AbdElrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4415,14 +4415,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\EndProject\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
-              "projectPath": "D:\\EndProject\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
+            "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
+              "projectPath": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
             }
           }
         }
@@ -4431,6 +4432,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4484,8 +4490,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MimeKit' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-gmc6-fwg3-75m5",
+      "libraryId": "MimeKit",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

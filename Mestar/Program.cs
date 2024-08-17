@@ -107,8 +107,8 @@ builder.Services.AddSwaggerGen(options =>
         " Medical Service Monitoring Drivers Health in real time by day ",
         Contact = new OpenApiContact
         {
-            Name = "Hossam",
-            Email = "HossamHosny415@gmail.com"
+            Name = "Famous",
+            Email = "abdomashour458@gmail.com"
         }
     });
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

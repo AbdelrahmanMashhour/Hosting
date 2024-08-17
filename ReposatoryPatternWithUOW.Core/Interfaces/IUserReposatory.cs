@@ -28,8 +28,10 @@ namespace RepositoryPatternWithUOW.Core.Interfaces
 
         public Task<ProfileDataDto> GetProfileData(int studentId);
         public Task<IEnumerable<StudentDto>> GetAllStudents(bool bloked);
+        public  Task<IEnumerable<int>> GetAllStudentsId();
         public Task<bool> AddToBlackList(int id);
         public Task<bool> RemoveFromBlackList(int id);
+        public Task<int> GetUserId(string email);
         
 
 
