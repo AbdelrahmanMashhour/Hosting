@@ -150,6 +150,7 @@ var app = builder.Build();
 //}
 
 
+app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 
 app.UseCors("Policy");
@@ -157,8 +158,6 @@ app.UseCors("Policy");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<RedirectionMiddleware>();
-//this middleware to prevent to download videos
-//app.UseMiddleware<FileMiddleWare>();
 app.UseStaticFiles();
 app.MapControllers();
 
