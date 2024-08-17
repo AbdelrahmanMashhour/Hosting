@@ -176,8 +176,8 @@ namespace Mestar.Controllers
         public async Task<IActionResult> AddCourse([FromForm]AddCourseDto dto)
         {
             string fileName=" ", filePath=" ";
-            try
-            {
+            //try
+            //{
                 var course = new Course()
                 {
                     CourseName = dto.CourseName,
@@ -228,12 +228,12 @@ namespace Mestar.Controllers
                 var obj = new { coursId = coursId, dto = dto };
                 return Ok(obj);
 
-            }
-            catch (Exception e)
-            {
+           // }
+            //catch (Exception e)
+            //{
 
-                return BadRequest($"{e.Message}\n fileName{fileName}\n filePath{filePath}" );
-            }
+            //    return BadRequest($"{e.Message}\n fileName{fileName}\n filePath{filePath}" );
+            //}
 
         }
 
