@@ -4395,19 +4395,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AbdElrahman\\.nuget\\packages\\": {}
+    "C:\\Users\\Infotech\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
+      "projectUniqueName": "D:\\NotMine\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
       "projectName": "RepositoryPatternWithUOW.EF",
-      "projectPath": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
-      "packagesPath": "C:\\Users\\AbdElrahman\\.nuget\\packages\\",
-      "outputPath": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.EF\\obj\\",
+      "projectPath": "D:\\NotMine\\Hosting\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
+      "packagesPath": "C:\\Users\\Infotech\\.nuget\\packages\\",
+      "outputPath": "D:\\NotMine\\Hosting\\ReposatoryPatternWithUOW.EF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\AbdElrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Infotech\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4415,15 +4415,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
-              "projectPath": "D:\\The knightEndProject\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
+            "D:\\NotMine\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
+              "projectPath": "D:\\NotMine\\Hosting\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
             }
           }
         }
@@ -4490,7 +4489,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

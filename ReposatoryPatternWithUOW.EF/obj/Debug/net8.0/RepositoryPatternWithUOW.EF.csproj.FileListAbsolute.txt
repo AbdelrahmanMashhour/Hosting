@@ -122,3 +122,21 @@ D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\Rep
 D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.genruntimeconfig.cache
 D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.EF.dll
 D:\The knightEndProject\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\Reposito.21B104BF.Up2Date
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\RepositoryPatternWithUOW.EF.deps.json
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\RepositoryPatternWithUOW.EF.runtimeconfig.json
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\RepositoryPatternWithUOW.EF.dll
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\RepositoryPatternWithUOW.EF.pdb
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.dll
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\bin\Debug\net8.0\RepositoryPatternWithUOW.Core.pdb
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.csproj.AssemblyReference.cache
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.GeneratedMSBuildEditorConfig.editorconfig
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.AssemblyInfoInputs.cache
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.AssemblyInfo.cs
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.csproj.CoreCompileInputs.cache
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.sourcelink.json
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\Reposito.21B104BF.Up2Date
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.dll
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\refint\RepositoryPatternWithUOW.EF.dll
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.pdb
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\RepositoryPatternWithUOW.EF.genruntimeconfig.cache
+D:\NotMine\Hosting\ReposatoryPatternWithUOW.EF\obj\Debug\net8.0\ref\RepositoryPatternWithUOW.EF.dll

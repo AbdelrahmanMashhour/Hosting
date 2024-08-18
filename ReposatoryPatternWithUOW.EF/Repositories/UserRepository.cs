@@ -111,18 +111,18 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
                 return false;
             }
         }
-        public async Task<string?> SendVerficationCode(string email, bool? IsForResetingPassword = false)
+        public async Task<bool> SendVerficationCode(string email, bool? IsForResetingPassword = false)
         {
             context.ChangeTracker.LazyLoadingEnabled = false;
             var user = await context.Users.AsNoTracking().Include(x => x.EmailVerificationCode).Include(x=>x.IdentityTokenVerification).FirstOrDefaultAsync(x => x.Email == email);
 
             if (user is null)
-                return null;
+                return false;
             if (user.EmailVerificationCode is not null && user.EmailVerificationCode.ExpiresAt < DateTime.Now.AddSeconds(-5))
                 context.Remove(user.EmailVerificationCode);
             else if (user.EmailVerificationCode is not null)
             {
-                return "sent";
+                return true;
             }
             var rand = new Random();
             var verificationNum = rand.Next(100000, int.MaxValue);
@@ -140,32 +140,22 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
                 body = $"Dear {email} ,\nThere was a request to reset your password on our Educationl application! \nIf you did not make this request then please ignore this email,\nand we have sent to you a verification code which is : <b>{verificationNum}</b> ";
                 subject = "Reset Password";
             }
-            Task t1, t2;
-            if(user.IdentityTokenVerification is not null)
-            context.Remove(user.IdentityTokenVerification);
-            var identityToken = TokensGenerator.GenerateToken();
-            user.IdentityTokenVerification = new()
-            {
-                ExpirationDate = DateTime.Now.AddMinutes(25),
-                UserId = user.UserId,
-                Token = identityToken
-            };
-          
-            t1=senderService.SendEmailAsync(email, subject, body);
-            t2 = context.SaveChangesAsync();
-            await Task.WhenAll(t1, t2);
 
-            return identityToken;
+            await Task.WhenAll(
+              context.SaveChangesAsync(),
+              senderService.SendEmailAsync(user.Email, subject, body)
+            );
+            return true;
 
         }
-        public async Task<bool> ValidateCode(string email,string identityToken, string code, bool isForResetPassword = false)
+        public async Task<string?> ValidateCode(string email, string code, bool isForResetPassword = false)
         {
             context.ChangeTracker.LazyLoadingEnabled = false;
             
-            var user = await context.Users.Include(x=>x.EmailVerificationCode).Include(x=>x.IdentityTokenVerification).FirstOrDefaultAsync(x => x.IdentityTokenVerification.Token == identityToken&&x.Email==email);
+            var user = await context.Users.Include(x=>x.EmailVerificationCode).FirstOrDefaultAsync(x => x.Email==email);
 
-            if (user is null || user.EmailVerificationCode is null||user.IdentityTokenVerification.ExpirationDate<DateTime.Now)
-                return false;
+            if (user is null || user.EmailVerificationCode is null)
+                return null;
 
             if (user.EmailVerificationCode.Code != code)
             {
@@ -174,21 +164,34 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
                 {
                     context.Remove(user.EmailVerificationCode);
                 }
-                return false;
+                return null;
             }
             if (user.EmailVerificationCode.ExpiresAt < DateTime.Now)
             {
                 context.Remove(user.EmailVerificationCode);
-                return false;
+                return null;
             }
             if (!isForResetPassword)
             {
                 user.EmailConfirmed = true;
-                context.Remove(user.IdentityTokenVerification);
                 context.Update(user);
             }
             context.Remove(user.EmailVerificationCode);
-            return true;
+            if (user.IdentityTokenVerification is not null)
+                context.Remove(user.IdentityTokenVerification);
+            if (isForResetPassword)
+            {
+                var identityToken = TokensGenerator.GenerateToken();
+                user.IdentityTokenVerification = new()
+                {
+                    ExpirationDate = DateTime.Now.AddMinutes(25),
+                    UserId = user.UserId,
+                    Token = identityToken
+                };
+                return identityToken;
+            }
+            else
+                return "true";
 
         }
         public async Task<bool> ResetPassword(ResetPasswordDto resetPasswordDto, string identityToken)

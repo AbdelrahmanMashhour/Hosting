@@ -74,8 +74,8 @@ namespace Mestar.Controllers
             cookieOptions.HttpOnly = httpOnlyValue;
             cookieOptions.Expires = expiresOn;
 
-            cookieOptions.SameSite = SameSiteMode.Strict;
-            //cookieOptions.SameSite = SameSiteMode.None;//wwwroot
+            //cookieOptions.SameSite = SameSiteMode.Strict;
+            cookieOptions.SameSite = SameSiteMode.None;//wwwroot
 
 
             Response.Cookies.Append(name, value, cookieOptions);
@@ -87,25 +87,18 @@ namespace Mestar.Controllers
         public async Task<IActionResult> SendConfirmationCode(SendCodeDto sendCodeDto)
         {
             var result = await unitOfWork.UserRepository.SendVerficationCode(sendCodeDto.Email, sendCodeDto.Reset is null or false ? false : true);
-            if (result is null)
-                return NotFound();
-            else if (result == "sent")
-                return Ok();
-            SetCookie("identityToken", result, DateTime.Now.AddMinutes(25), true);
-            return Ok();
+            return result ? Ok() : NotFound();
 
         }
 
         [HttpPost("ValidateEmailVerificationCode")]
         public async Task<IActionResult> ValidateConfirmationCode(ValidationCodeDto VCD)
         {
-            if(!Request.Cookies.TryGetValue("identityToken",out string? val))
-                return Forbid();
-            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email,val, VCD.Code);
+           
+            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email, VCD.Code);
             await unitOfWork.SaveChangesAsync();
-            if (!result)
+            if (result is null)
                 return Forbid();
-            SetCookie("identityToken","",DateTime.Now.AddHours(-12), true);
             return Ok();
 
         }
@@ -114,12 +107,13 @@ namespace Mestar.Controllers
         [HttpPost("ValidateResetPasswordCode")]
         public async Task<IActionResult> ValidateResetPasswordCode(ValidationCodeDto VCD)
         {
-            if (!Request.Cookies.TryGetValue("identityToken", out string? val))
-                return Forbid();
-            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email,val, VCD.Code, true);
+       
+            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email, VCD.Code, true);
             await unitOfWork.SaveChangesAsync();
-            if (!result)
+            if (result is null)
                 return Forbid();
+            SetCookie("identityToken", result, DateTime.UtcNow.AddMinutes(25), true);
+
             return Ok();
 
         }
