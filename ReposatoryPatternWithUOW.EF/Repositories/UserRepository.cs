@@ -152,7 +152,7 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
         {
             context.ChangeTracker.LazyLoadingEnabled = false;
             
-            var user = await context.Users.Include(x=>x.EmailVerificationCode).FirstOrDefaultAsync(x => x.Email==email);
+            var user = await context.Users.AsNoTracking().Include(x=>x.EmailVerificationCode).Include(x=>x.IdentityTokenVerification).FirstOrDefaultAsync(x => x.Email==email);
 
             if (user is null || user.EmailVerificationCode is null)
                 return null;
@@ -188,6 +188,7 @@ namespace RepositoryPatternWithUOW.EF.Reposatories
                     UserId = user.UserId,
                     Token = identityToken
                 };
+                context.Update(user);
                 return identityToken;
             }
             else
