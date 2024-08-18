@@ -14,6 +14,7 @@ using RepositoryPatternWithUOW.Core.Models;
 using RepositoryPatternWithUOW.Core.ReturnedModels;
 using RepositoryPatternWithUOW.EfCore.Mapper;
 using System;
+using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -109,8 +110,13 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         public async Task<int> AddUnitAsync(UnitDto unitDto)
         {
             var unite = new Unite();
+            List<string> extentions = [".pdf", ".docx", ".doc", ".txt"];
+            //if(Path.GetExtension(unitDto.VocablaryPdf.FileName)
+        
             Func<IFormFile, string,Task<string>> AddFile = async(file,fileName) =>
             {
+                if (!extentions.Exists(x => x == Path.GetExtension(fileName)))
+                    return null!;
                 if (file != null && file.Length != 0)
                 {
                     //Path.Combine(webHostEnvironment.WebRootPath, fileName);
