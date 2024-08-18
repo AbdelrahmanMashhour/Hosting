@@ -98,8 +98,8 @@ namespace Mestar.Controllers
 
             unit.StoryUrl = unit.StoryUrl is null ? null : HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.StoryUrl;
 
-
-            unit.Assignment.AssFiles= HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.Assignment.AssFiles;
+            if(unit.Assignment is not null)
+                 unit.Assignment.AssFiles= HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + unit.Assignment.AssFiles;
 
             
 

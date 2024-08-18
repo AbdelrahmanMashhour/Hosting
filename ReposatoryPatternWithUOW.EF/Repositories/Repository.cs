@@ -377,7 +377,8 @@ namespace RepositoryPatternWithUOW.EF.Repositories
 
 
                
-                item.Assignment.AssFiles= _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.Assignment.AssFiles;
+                if(item.Assignment is not null)
+                    item.Assignment.AssFiles= _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + item.Assignment.AssFiles;
 
                
                 
@@ -797,7 +798,14 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         }
         public async Task<bool> IsPayOrNot(int studentId, int courseId)
         {
-            return await context.StudentCourses.AnyAsync(st=>st.StudentId==studentId && st.CourseId==courseId);
+            bool result= await context.StudentCourses.AnyAsync(st=>st.StudentId==studentId && st.CourseId==courseId);
+            if (!result)
+            {
+                var price =context.Courses.Where(c => c.CourseId == courseId).Select(c => c.CoursePrice).Single();
+                if (price != 0) return false;
+                return true;
+            }
+            return result;
         }
 
         public async Task<IEnumerable<StudenPayment>> GetStudenPaymentByCourseId(int courseId)
