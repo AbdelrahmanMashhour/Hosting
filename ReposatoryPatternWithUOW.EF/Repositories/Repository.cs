@@ -801,7 +801,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
             bool result= await context.StudentCourses.AnyAsync(st=>st.StudentId==studentId && st.CourseId==courseId);
             if (!result)
             {
-                var price =context.Courses.Where(c => c.CourseId == courseId).Select(c => c.CoursePrice).Single();
+                var price = (await context.Courses.AsNoTracking().FirstOrDefaultAsync(c => c.CourseId == courseId))?.CoursePrice;
                 if (price != 0) return false;
                 return true;
             }
