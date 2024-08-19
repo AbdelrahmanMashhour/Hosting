@@ -157,8 +157,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseMiddleware<RedirectionMiddleware>();
 app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
 app.MapControllers();
 
 app.Run();

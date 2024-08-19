@@ -1,0 +1,15 @@
+D:\NotMine\Hosting\Mestar\PublishedInWindows\RepositoryPatternWithUOW.Core.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\RepositoryPatternWithUOW.Core.deps.json
+D:\NotMine\Hosting\Mestar\PublishedInWindows\RepositoryPatternWithUOW.Core.pdb
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.AspNetCore.JsonPatch.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.IdentityModel.Abstractions.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.IdentityModel.Logging.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.IdentityModel.Protocols.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Microsoft.IdentityModel.Tokens.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Newtonsoft.Json.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\Newtonsoft.Json.Bson.dll
+D:\NotMine\Hosting\Mestar\PublishedInWindows\System.IdentityModel.Tokens.Jwt.dll
